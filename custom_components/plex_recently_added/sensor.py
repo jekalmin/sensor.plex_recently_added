@@ -182,7 +182,7 @@ class PlexRecentlyAddedSensor(Entity):
                                                     False, fanart)
                 self.card_json.append(card_item)
                 self.change_detected = False
-        attributes['data'] = json.dumps(self.card_json)
+        attributes['data'] = json.dumps(self.card_json, ensure_ascii=False)
         return attributes
 
     def update(self):
